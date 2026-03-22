@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote - Show Ur Tees</title>
+    <meta name="description" content="Get a free, no-obligation quote for your custom printing project. Upload your design and tell us what you need.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo"><img src="assets/showurteeslogo.jpg" alt="Show Ur Tees"></a>
+            <div class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="faq.html">FAQ</a>
+                <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Request a Quote</h1>
+                <p>Tell us about your project and we'll get back to you with a free, no-obligation quote.</p>
+            </div>
+        </section>
+
+        <!-- Quote Form -->
+        <section class="section">
+            <div class="container">
+                <div class="quote-form-wrapper">
+                    <form id="quoteForm" novalidate>
+                        <!-- Contact Info -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                                <span class="form-error">Please enter your name.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                                <span class="form-error">Please enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(205) 555-1234">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-type">Product Type <span class="required">*</span></label>
+                                <select id="product-type" name="product-type" class="form-control" required>
+                                    <option value="" disabled selected>Select a product type</option>
+                                    <option value="tshirts">T-Shirts & Apparel</option>
+                                    <option value="banners">Banners & Signage</option>
+                                    <option value="other">Other / Custom Project</option>
+                                </select>
+                                <span class="form-error">Please select a product type.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quantity">Quantity</label>
+                                <input type="number" id="quantity" name="quantity" class="form-control" placeholder="e.g., 50" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="size">Size / Dimensions</label>
+                                <input type="text" id="size" name="size" class="form-control" placeholder="e.g., Large, 3ft x 6ft">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="colors">Color Preferences</label>
+                                <input type="text" id="colors" name="colors" class="form-control" placeholder="e.g., Black shirts with white print">
+                            </div>
+                            <div class="form-group">
+                                <label for="deadline">Needed By Date</label>
+                                <input type="date" id="deadline" name="deadline" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" name="budget" class="form-control">
+                                <option value="" disabled selected>Select a budget range (optional)</option>
+                                <option value="under-100">Under $100</option>
+                                <option value="100-250">$100 – $250</option>
+                                <option value="250-500">$250 – $500</option>
+                                <option value="500-1000">$500 – $1,000</option>
+                                <option value="1000-plus">$1,000+</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Project Description <span class="required">*</span></label>
+                            <textarea id="description" name="description" class="form-control" rows="5" placeholder="Tell us about your project - what you need, any special requirements, etc." required></textarea>
+                            <span class="form-error">Please describe your project.</span>
+                        </div>
+
+                        <!-- File Upload -->
+                        <div class="form-group">
+                            <label>Upload Your Artwork</label>
+                            <div class="file-upload" id="fileUpload">
+                                <input type="file" id="artwork" name="artwork" accept=".png,.jpg,.jpeg,.gif,.svg,.pdf,.ai,.psd,.eps" multiple>
+                                <div class="file-upload-icon">
+                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M24 32V16M24 16l-6 6M24 16l6 6" stroke="#2B7DE9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 32v4a4 4 0 004 4h24a4 4 0 004-4v-4" stroke="#A4D3FF" stroke-width="2.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <p><strong>Click to upload</strong> or drag and drop</p>
+                                <span class="file-types">PNG, JPG, SVG, PDF, AI, PSD, EPS - Max 10MB per file</span>
+                            </div>
+                            <div class="file-list" id="fileList"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Quote Request</button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="form-success" id="formSuccess">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="40" fill="#E8F5E9"/>
+                            <path d="M25 40l10 10 20-20" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3>Quote Request Sent!</h3>
+                        <p>Thank you for reaching out. We'll review your project details and get back to you within 1–2 business days.</p>
+                        <a href="index.html" class="btn btn-secondary mt-2">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo"><img src="assets/showurteeslogo.jpg" alt="Show Ur Tees"></a>
+                    <p>High-quality custom printing for t-shirts, banners, signage, and more. Your vision, printed bold.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="quote.html">T-Shirts & Apparel</a></li>
+                        <li><a href="quote.html">Banners & Signage</a></li>
+                        <li><a href="quote.html">Custom Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>showurtees@gmail.com</li>
+                        <li>(205) 699-3630</li>
+                        <li>8316 Parkway Dr, Ste 104<br>Leeds, AL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Show Ur Tees. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/show.ur.tees/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/quote-form.js"></script>
+</body>
+</html>
